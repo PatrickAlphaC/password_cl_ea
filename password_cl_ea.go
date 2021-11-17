@@ -1,4 +1,3 @@
-// gcloud functions deploy password-api --runtime go113 --trigger-http --allow-unauthenticated --source password_cl_ea --entry-point MakeRequest
 package http
 
 import (
@@ -138,8 +137,3 @@ func addParametersFromPost(parameters map[string][]string, data interface{}) map
 	}
 	return parameters
 }
-
-// curl -X POST -H "content-type:application/json" "https://us-central1-alpha-chain-api.cloudfunctions.net/test-api?to_symbol=USD&from_symbol=LINK"
-// curl -X POST -H "content-type:application/json" "https://us-central1-alpha-chain-api.cloudfunctions.net/test-api?to_symbol=ETH&from_symbol=XDR"
-// $ curl -X POST -H "content-type:application/json" "https://us-central1-alpha-chain-api.cloudfunctions.net/develop-test-api" --data '{"data":{"from_symbol":"XDR", "to_symbol":"ETH", "chainlink_node":"true"}}'
-//  curl -X GET "https://us-central1-alpha-chain-api.cloudfunctions.net/data-query?to_symbol=USD&from_symbol=XAG"
